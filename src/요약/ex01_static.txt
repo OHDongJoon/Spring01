@@ -1,0 +1,12 @@
+Welcome Page 만들기
+
+    - 스프링 부트가 제공하는 Welcome Page 기능
+    - static/index.html 을 올려두면 Welcome page 기능을 제공한다.
+
+스프링 부트 정적 컨텐츠 기능
+
+    - static / hello-static.html 생성
+
+    - 경로 localhost:8080/hello-static.html
+
+    - hello-static 관련 컨트롤러가 없으니 정적 컨텐츠를 찾아서 반환한다.

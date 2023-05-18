@@ -1,0 +1,8 @@
+
+@ResponseBody를 사용하면 뷰 리졸버(viewResolver)를 사용하지 않음
+
+대신에 HTTP 의 BODY에 문자 내용을 직접 반환 가능
+
+@ResponseBody 를 사용하고 객체를 반환하면 객체가 JSON으로 변환됨
+
+HttpMessageConverter 가 동작함

@@ -1,0 +1,26 @@
+
+## 스프링 빈과 의존관계
+   - 생성자에 @Autowired 가 있으면 스프링이 연관된 객체를 스프링 컨테이너에서 찾아서 넣어준다.
+
+   - 이렇게 객체 의존관계를 외부에서 넣어주는 것을 DI (Dependency Injection), 의존성 주입이라 한다.
+
+   - 이전 테스트에서는 개발자가 직접 주입했고, 여기서는 @Autowired에 의해 스프링이 주입해준다.
+
+
+
+
+
+
+## SrpingConfig.java 참고
+
+ -   db 가 정해지지 않아 MemoryMemberRepository 메모리로 작업을 진행하다가 db가 정해지면 db로 변경하는 작업을 진행했다
+
+  -   MemberService는 MemberRepository를 의존하고 있고, MemberRepository 구현체가 (MemoryMemberRepository, JdbcMemberRepository) 처럼 여러개가 생길 수 있다.
+
+  -   db가 정해지고  SpringConfig 에서만 수정을 해주면 여러개 Service가 있을때 모두 변경해줘야하는 번거로움이 없어진다.
+
+          @Bean
+             public MemberRepository memberRepository() {
+                 return new MemoryMemberRepositry();  // 메모리 리포지토리를 주석으로 막고
+                 return new JdbcMemberRepository(dataSource); // jdbc 리포지토리로 변경
+             }
